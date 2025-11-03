@@ -7,14 +7,14 @@ pipeline {
                 echo 'Starting Pipeline, fetching code...'
                 checkout scm 
                 // Grant execution permission to the scripts
-                sh 'chmod +x build.sh test.sh' 
+                bat 'attrib +x build.sh test.sh' 
             }
         }
         
         stage('Build') {
             steps {
                 echo '--- Starting Build Stage: Executing build.sh ---'
-                sh './build.sh' 
+                bat 'call build.bat' 
             }
             post {
                 success {
@@ -27,7 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '--- Starting Test Stage: Executing test.sh ---'
-                sh './test.sh' 
+                bat 'call test.bat' 
             }
         }
 
