@@ -61,7 +61,7 @@
 //     }
 // }
 
-node('jenkins') {
+node {
     // 1. Initialization and Checkout
     stage('Initialize & Checkout') {
         echo 'Starting Pipeline, fetching code...'
