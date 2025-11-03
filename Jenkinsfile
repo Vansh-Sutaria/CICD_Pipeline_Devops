@@ -13,7 +13,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo '-- Starting Build Stage: Executing build.sh --'
+                echo '--- Starting Build Stage: Executing build.sh ---'
                 sh './build.sh' 
             }
             post {
